@@ -7,6 +7,13 @@
   z-index: 100;
   padding: 10px;
   position: fixed;
+  /* min-height: 94px; */
+}
+
+.header--dummy {
+  position: absolute;
+  top: 0;
+  bottom: 0;
 }
 
 .header--navbar {
@@ -17,12 +24,8 @@
   align-items: center;
 }
 
-.header--dummy {
-  height: 100%;
-  position: absolute;
-}
-
 .header--logo {
+  cursor: pointer;
   width: 15%;
 }
 
@@ -43,6 +46,8 @@
   padding: 10px 10px;
   border-radius: 4px;
   transition: color 0.1s;
+  user-select: none;
+  position: relative;
 }
 
 .header--option:hover {
@@ -52,4 +57,17 @@
 .header--option:active {
   color: #40916c;
   background-color: white;
+}
+
+.header--option_chosen {
+  display: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 10px 10px;
+  margin: -10px -10px;
+  border-radius: 4px;
+  color: #40916c;
 }

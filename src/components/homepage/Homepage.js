@@ -1,6 +1,6 @@
 import "./Homepage.css";
 import React from "react";
-import hero from "../images/irene-davila-O1PHdGGcljQ-unsplash.jpg";
+import hero from "../general-components/images/irene-davila-O1PHdGGcljQ-unsplash.jpg";
 
 const Homepage = () => {
   return (

@@ -1,12 +1,12 @@
 import React from "react";
 import "./Footer.css";
-import facebook from "../../images/facebook.svg";
-import linkedin from "../../images/linkedin.svg";
-import youtube from "../../images/youtube.svg";
-import xtwitter from "../../images/x-twitter.svg";
-import instagram from "../../images/instagram.svg";
-import phone from "../../images/phone-solid.svg";
-import email from "../../images/envelope-solid.svg";
+import facebook from "../images/facebook.svg";
+import linkedin from "../images/linkedin.svg";
+import youtube from "../images/youtube.svg";
+import xtwitter from "../images/x-twitter.svg";
+import instagram from "../images/instagram.svg";
+import phone from "../images/phone-solid.svg";
+import email from "../images/envelope-solid.svg";
 
 const Footer = () => {
   return (

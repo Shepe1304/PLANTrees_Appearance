@@ -5,6 +5,10 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
+:root {
+  --gold: rgb(245, 210, 121)
+}
+
 .bold {
   font-weight: 700;
 }
