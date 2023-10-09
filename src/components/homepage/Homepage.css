@@ -159,6 +159,8 @@
   box-shadow: 0 0px 20px 0 rgba(4, 89, 51, 0.3);
   transition: 0.1s;
   border: none;
+  /* align-self: center; */
+  margin: 0 auto;
 }
 
 .homepage--what_to_do--get_started button:hover {
