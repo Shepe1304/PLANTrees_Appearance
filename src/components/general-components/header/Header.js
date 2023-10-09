@@ -78,7 +78,11 @@ const Header = () => {
                 NavigateClick(4);
               }}
             >
-              CONTACT
+              {pathname === "/contact" ? (
+                <div className="header--option_chosen">CONTACT</div>
+              ) : (
+                <div>CONTACT</div>
+              )}
             </div>
             {/* <div className="header--option">TREE LIBRARY</div>
             <div className="header--option">MY TREE LIBRARY</div> */}
