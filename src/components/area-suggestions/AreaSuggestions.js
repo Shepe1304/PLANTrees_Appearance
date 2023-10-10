@@ -21,7 +21,7 @@ const AreaSuggestions = () => {
     },
     {
       location:
-        "Đ. Trần Nhân Tôn/403 Hẻm 57, Khu phố 1, Quận 5, Thành phố Hồ Chí Minh, Việt Nam",
+        "Đường Trần Nhân Tôn/403 Hẻm 57, Khu phố 1, Quận 5, Thành phố Hồ Chí Minh, Việt Nam",
       img: (
         <img
           className="area-suggestions--snapshot"
@@ -60,13 +60,13 @@ const AreaSuggestions = () => {
   ];
 
   const HandleSearchLocation = () => {
-    console.log(location);
+    // console.log(location);
     locations.map((locationObj) => {
       console.log(locationObj.location === location);
       if (locationObj.location === location) {
         setFoundMatch(true);
         setImgShow(locationObj.img);
-        console.log(imgShow);
+        // console.log(imgShow);
         return;
       }
     });
@@ -85,7 +85,7 @@ const AreaSuggestions = () => {
                 if (locationObj.location === location) {
                   setFoundMatch(true);
                   setImgShow(locationObj.img);
-                  console.log(imgShow);
+                  // console.log(imgShow);
                   return;
                 }
                 setFoundMatch(false);
@@ -103,11 +103,13 @@ const AreaSuggestions = () => {
         </div>
         <div className="area-suggestions--info">
           <div className="area-suggestions--info_heading">POTENTIAL SPOTS</div>
-          <div className="area-suggestions--info_text">
-            <PotentialSpot />
-            <PotentialSpot />
-            <PotentialSpot />
-          </div>
+          {foundMatch ? (
+            <div className="area-suggestions--info_text">
+              <PotentialSpot />
+              <PotentialSpot />
+              <PotentialSpot />
+            </div>
+          ) : "No tree type suggestions yet."}
         </div>
       </div>
       <div className="area-suggestions--map">
