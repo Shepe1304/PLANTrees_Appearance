@@ -94,10 +94,12 @@
   display: flex;
   justify-content: center;
   margin-top: 25px;
+  padding-top: 40px;
 }
 
 .area-suggestions--map img {
   width: 100%;
+  object-fit: cover;
   /* border-radius: 10px;
   border: 8px solid white; */
 }
