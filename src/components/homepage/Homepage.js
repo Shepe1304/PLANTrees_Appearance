@@ -1,14 +1,43 @@
 import "./Homepage.css";
-import React from "react";
+import React, { useState } from "react";
 import hero from "../general-components/images/irene-davila-O1PHdGGcljQ-unsplash.jpg";
 
 const Homepage = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const HandleFileSubmit = (e) => {};
+
   return (
     <div className="homepage">
       <div className="homepage--hero">
         <div className="homepage--hero--dark"></div>
         <img src={hero} alt="" />
         <div className="homepage--slogan bold">
+          <form action="">
+            <input
+              type="file"
+              onChange={(e) => {
+                console.log(e.target.files[0].name);
+                setSelectedImage(e.target.files[0]);
+              }}
+            />
+            {selectedImage ? (
+              <>
+                <img
+                  alt="not found"
+                  width={"250px"}
+                  src={URL.createObjectURL(selectedImage)}
+                />
+                <button
+                  onClick={() => {
+                    setSelectedImage(null);
+                  }}
+                >
+                  REMOVE
+                </button>
+              </>
+            ) : null}
+          </form>
           <div>
             FIND THE <span className="light-green">PERFECT</span> PLACE TO{" "}
             <span className="light-green">PLANT</span> YOUR{" "}
