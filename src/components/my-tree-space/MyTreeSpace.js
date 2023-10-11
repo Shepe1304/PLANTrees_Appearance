@@ -7,10 +7,6 @@ import axios from "axios";
 const MyTreeSpace = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // const [fileName, setFileName] = useState("");
-
-  // const [location, setLocation] = useState("");
-
   const [submitted, setSumbitted] = useState(false);
 
   const [filepath, setFilepath] = useState("");
@@ -20,38 +16,6 @@ const MyTreeSpace = () => {
   const HandlePhotoSubmitClicked = () => {
     setShowImage(!showImage);
   };
-
-  // Replace this with your actual image data (base64-encoded)
-  // const base64Image = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/...";
-
-  // Create a JSON object with the image data
-  // const requestData = { image: base64Image };
-
-  // Define the API endpoint
-  // const apiUrl = "http://localhost:5000/upload_image"; // Replace with your Flask API URL
-
-  // Define an async function to make the POST request
-  // async function uploadImage() {
-  //   try {
-  //     const response = await axios.post(apiUrl, requestData, {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
-
-  //     console.log("Response from server:", response.data);
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //   }
-  // }
-
-  // Call the async function to send the POST request
-  // uploadImage();
-
-  // const HandlePhotoSubmitSend = () => {
-  //   //send photo to server
-  //   console.log("CLICKED");
-  // }
 
   const HandlePhotoSubmit = () => {
     console.log(selectedImage.name);

@@ -3,11 +3,13 @@ import "./AreaSuggestions.css";
 import locationDot from "../general-components/images/locationDot.png";
 import PotentialSpot from "./PotentialSpot";
 import sendIcon from "./img/end icon.svg";
+import { Trees } from "../Trees";
 
 const AreaSuggestions = () => {
   const [location, setLocation] = useState("");
   const [imgShow, setImgShow] = useState("");
   const [foundMatch, setFoundMatch] = useState(false);
+  const [t_ids, setT_ids] = useState([]);
 
   const locations = [
     {
@@ -18,6 +20,8 @@ const AreaSuggestions = () => {
           src={require("./img/hinh12_v2.png")}
         />
       ),
+      tt: [2, 3],
+      id: 0,
     },
     {
       location:
@@ -28,6 +32,8 @@ const AreaSuggestions = () => {
           src={require("./img/hinh22_v2.png")}
         />
       ),
+      tt: [1, 4, 5],
+      id: 1,
     },
     {
       location: "Phường 6, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam",
@@ -37,6 +43,8 @@ const AreaSuggestions = () => {
           src={require("./img/hinh32_v2.png")}
         />
       ),
+      tt: [0, 1, 2],
+      id: 2,
     },
     {
       location: "Phường 12, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam",
@@ -46,6 +54,8 @@ const AreaSuggestions = () => {
           src={require("./img/hinh42_v2.png")}
         />
       ),
+      tt: [3, 4, 5, 6],
+      id: 3,
     },
     {
       location:
@@ -56,6 +66,8 @@ const AreaSuggestions = () => {
           src={require("./img/hinh52_v2.png")}
         />
       ),
+      tt: [0, 3, 6],
+      id: 4,
     },
   ];
 
@@ -66,6 +78,7 @@ const AreaSuggestions = () => {
       if (locationObj.location === location) {
         setFoundMatch(true);
         setImgShow(locationObj.img);
+        setT_ids(locationObj.tt);
         // console.log(imgShow);
         return;
       }
@@ -85,6 +98,7 @@ const AreaSuggestions = () => {
                 if (locationObj.location === location) {
                   setFoundMatch(true);
                   setImgShow(locationObj.img);
+                  setT_ids(locationObj.tt);
                   // console.log(imgShow);
                   return;
                 }
@@ -102,14 +116,25 @@ const AreaSuggestions = () => {
           />
         </div>
         <div className="area-suggestions--info">
-          <div className="area-suggestions--info_heading">POTENTIAL SPOTS</div>
+          <div className="area-suggestions--info_heading">
+            TREE TYPE SUGGESTIONS
+          </div>
           {foundMatch ? (
             <div className="area-suggestions--info_text">
-              <PotentialSpot />
-              <PotentialSpot />
-              <PotentialSpot />
+              {Trees.map((tree) => {
+                if (t_ids.includes(tree.id)) {
+                  return (
+                    <PotentialSpot
+                      treeName={tree.name}
+                      treeDescription={tree.description}
+                    />
+                  );
+                }
+              })}
             </div>
-          ) : "No tree type suggestions yet."}
+          ) : (
+            "No tree type suggestions yet."
+          )}
         </div>
       </div>
       <div className="area-suggestions--map">
